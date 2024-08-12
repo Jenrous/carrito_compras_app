@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" [routerLink]="['/lista-productos']">
+      <ion-icon src="../assets/icon/arrow-back-outline.svg"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>detalleProducto</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">detalleProducto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+
+  <ion-card>
+    <img alt="Silhouette of mountains" [src]="producto?.imagen" />
+    <ion-card-header>
+      <ion-card-title>{{producto?.nombre}}</ion-card-title>
+      <ion-card-subtitle>{{producto?.categoria}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <div [innerHTML]="producto?.descripcion"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button size="large" (click)="restar()">
+       <ion-icon src="../assets/icon/remove-circle-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{cantidad}}</ion-title>
+    <ion-buttons slot="end">
+<ion-button size="large" (click)="sumar()">
+      <ion-icon src="../assets/icon/add-circle-outline.svg"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-content>
+<ion-footer>
+  <ion-button expand="block">
+    Agregar al carrito
+    <ion-icon src="../../assets/icon/cart-outline.svg"></ion-icon>
+  </ion-button>
+</ion-footer>
+
+
+
+
+
+<!-- ..\node_modules\.bin\ionic generate page carritoCompras
+Esta es la ruta para crear un componente en angular ionic -->
+
